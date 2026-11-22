@@ -23,6 +23,22 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 - Logo: the same T.W Services logo files as the shop app (owner's own artwork).
 - **First push straight to `main`** (notes file only) was approved once, to create the branch. Everything after goes through pull requests.
 
+## How the site is laid out
+
+- `site/` is everything that gets published (`netlify.toml`: publish `site`, no build command). This notes file is outside it on purpose, so it is never public.
+- One folder per page with an `index.html` (clean addresses like `/about/`): `/`, `/general-contractors/`, `/fabricators/`, `/residential-small-jobs/`, `/projects/`, `/about/`, `/contact/`, plus `/thanks/` (after the form is sent) and `404.html`.
+- `site/assets/style.css` is the only stylesheet. **No JavaScript at all**: the phone menu is a `<details>` element; there are two menus (desktop row and phone dropdown) in each page's header. The header and footer are copied into every page, so a change to them must be made in all 9 files.
+- Logo files in `site/assets/img/` are copies of the shop app's (`logo-mark.png` in the header, `logo-dark.png` in the footer).
+- Photo placeholders are `<div class="photo-slot">what goes here</div>` (shown as "PHOTO COMING"). Replace each with the owner's photo (`<img>` with alt text, shrunk to web size).
+- `netlify.toml` sets safety headers (a Content Security Policy that allows no scripts and only our own files). If a script, map embed or outside font is ever added, the policy must be updated or it will be blocked.
+
+## Contact form (checked against Netlify docs 2026-11-22)
+
+- Netlify Forms: `<form name="contact" data-netlify="true" netlify-honeypot="company-website" action="/thanks/">`. **Free and unlimited on credit-based plans.** Spam filtered by Akismet plus our hidden honeypot field.
+- Owner must turn on **Forms > Enable form detection** for the Netlify project, then redeploy.
+- Email to **bids@twfabs.com**: set in Forms > Submission notifications. An address outside the Netlify team gets one confirmation email that must be clicked first (or, if that isn't offered yet, the address must be a team member). The `email` field becomes the Reply-to, so replying answers the customer.
+- Fields: name*, company, email*, phone, what do you need (service list), project location, message*. No file uploads (plans are sent by email instead).
+
 ## Tech
 
 - Hosting: Netlify, its own project on the owner's existing **Pro** team. Production deploy = 15 credits; deploy previews are free.
@@ -37,4 +53,5 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 
 ## Change log
 
-- 2026-11-22: Repository created by the owner; project notes written; owner's Wix draft read and pages, email and photo decisions recorded. Nothing built yet.
+- 2026-11-22: Repository created by the owner; project notes written; owner's Wix draft read and pages, email and photo decisions recorded.
+- 2026-11-22: First version built: 7 pages from the Wix wording (cleaned up), contact form (Netlify Forms), photo placeholders, logo, safety headers. Checked at phone and desktop size (no errors, no sideways scroll, all links work). Pull request for owner review; not deployed (Netlify project not created yet).
