@@ -39,6 +39,12 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 - Email to **bids@twfabs.com**: set in Forms > Submission notifications. An address outside the Netlify team gets one confirmation email that must be clicked first (or, if that isn't offered yet, the address must be a team member). The `email` field becomes the Reply-to, so replying answers the customer.
 - Fields: name*, company, email*, phone, what do you need (service list), project location, message*. No file uploads (plans are sent by email instead).
 
+## Still to do (owner)
+
+- Netlify: **Forms > Enable form detection**, then a redeploy (the next merge, or Deploys > Trigger deploy), then **Forms > Submission notifications** to bids@twfabs.com and click the confirmation email.
+- Send own photos (and which project names may be shown); answer the wording questions ("0 injuries", "century" vs "decades" of experience, press brake 3/16").
+- Make the project public when ready; then domain and DNS.
+
 ## Tech
 
 - Hosting: Netlify, its own project on the owner's existing **Pro** team. Production deploy = 15 credits; deploy previews are free.
@@ -54,4 +60,5 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 ## Change log
 
 - 2026-11-22: Repository created by the owner; project notes written; owner's Wix draft read and pages, email and photo decisions recorded.
-- 2026-11-22: First version built: 7 pages from the Wix wording (cleaned up), contact form (Netlify Forms), photo placeholders, logo, safety headers. Checked at phone and desktop size (no errors, no sideways scroll, all links work). Pull request for owner review; not deployed (Netlify project not created yet).
+- 2026-11-22: First version built: 7 pages from the Wix wording (cleaned up), contact form (Netlify Forms), photo placeholders, logo, safety headers. Checked at phone and desktop size (no errors, no sideways scroll, all links work). TylerTW/tw-services-website#1, merged by the owner.
+- 2026-11-22: Owner created the Netlify project (Import from GitHub; production branch main). First production deploy of the site (15 credits). New projects start private, so only the owner can view it for now. Form detection and the bids@ email notification not turned on yet.
