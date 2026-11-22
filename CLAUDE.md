@@ -35,9 +35,16 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 ## Contact form (checked against Netlify docs 2026-11-22)
 
 - Netlify Forms: `<form name="contact" data-netlify="true" netlify-honeypot="company-website" action="/thanks/">`. **Free and unlimited on credit-based plans.** Spam filtered by Akismet plus our hidden honeypot field.
-- Owner must turn on **Forms > Enable form detection** for the Netlify project, then redeploy.
+- Form detection: Manage > Forms > Settings > "Find forms on your pages" (on since 2026-11-22). Netlify's docs still call it "Enable form detection". It only scans at publish time.
 - Email to **bids@twfabs.com**: set in Forms > Submission notifications. An address outside the Netlify team gets one confirmation email that must be clicked first (or, if that isn't offered yet, the address must be a team member). The `email` field becomes the Reply-to, so replying answers the customer.
 - Fields: name*, company, email*, phone, what do you need (service list), project location, message*. No file uploads (plans are sent by email instead).
+
+## Still to do (owner)
+
+- Netlify: form detection is **on** (owner, 2026-11-22; new UI: Manage > Forms > Settings > "Find forms on your pages"). After the next publish, **Forms > Notifications**: email to bids@twfabs.com, then click the confirmation email.
+- Netlify's new dashboard has its own AI agent ("Ask for a change" box, Publish button, "Add a contact form" suggestions). Owner should not use them: changes go through GitHub pull requests only.
+- Send own photos (and which project names may be shown); answer the wording questions ("0 injuries", "century" vs "decades" of experience, press brake 3/16").
+- Make the project public when ready; then domain and DNS.
 
 ## Tech
 
@@ -54,4 +61,6 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 ## Change log
 
 - 2026-11-22: Repository created by the owner; project notes written; owner's Wix draft read and pages, email and photo decisions recorded.
-- 2026-11-22: First version built: 7 pages from the Wix wording (cleaned up), contact form (Netlify Forms), photo placeholders, logo, safety headers. Checked at phone and desktop size (no errors, no sideways scroll, all links work). Pull request for owner review; not deployed (Netlify project not created yet).
+- 2026-11-22: First version built: 7 pages from the Wix wording (cleaned up), contact form (Netlify Forms), photo placeholders, logo, safety headers. Checked at phone and desktop size (no errors, no sideways scroll, all links work). TylerTW/tw-services-website#1, merged by the owner.
+- 2026-11-22: Owner created the Netlify project (Import from GitHub; production branch main). First production deploy of the site (15 credits). New projects start private, so only the owner can view it for now. Form detection and the bids@ email notification not turned on yet.
+- 2026-11-22: Owner turned on form detection. This notes-only pull request is merged to trigger the publish that registers the contact form.
