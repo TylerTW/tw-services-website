@@ -18,7 +18,7 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 
 - **Pages (7):** Home, General Contractors, Fabrication for Fabricators, Residential & Small Jobs, About, Projects (photo gallery), Contact.
 - **Wording:** from the Wix draft (tyler0069.wixsite.com/twfabs), spelling and grammar cleaned up, meaning unchanged. Company facts from it: 1701 CR 3405, Liberty Hill, TX 78642; 512-966-5999; serving Central Texas; started in a 3,000 sq ft shop with a crew of 2, now 24,000 sq ft after 20 years.
-- **Email shown on the site and for the contact form: bids@twfabs.com** (not the Wix draft's Inquires@).
+- **No email address anywhere on the site** (owner, 2026-11-22, to keep it away from spam harvesters). The top bar and footer say "Send us a message" and link to the contact form. Messages from the form are emailed to the owner's own address, which is set **only in Netlify** (Forms > Notifications), never in the code or these notes. bids@twfabs.com is not a real mailbox; don't use it.
 - **Photos:** wait for the owner's own originals; use clearly marked placeholders until then. Don't use the Wix copies, and never use manufacturer/eBay/stock machine pictures.
 - Logo: the same T.W Services logo files as the shop app (owner's own artwork).
 - **First push straight to `main`** (notes file only) was approved once, to create the branch. Everything after goes through pull requests.
@@ -36,12 +36,12 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 
 - Netlify Forms: `<form name="contact" data-netlify="true" netlify-honeypot="company-website" action="/thanks/">`. **Free and unlimited on credit-based plans.** Spam filtered by Akismet plus our hidden honeypot field.
 - Form detection: Manage > Forms > Settings > "Find forms on your pages" (on since 2026-11-22). Netlify's docs still call it "Enable form detection". It only scans at publish time.
-- Email to **bids@twfabs.com**: set in Forms > Submission notifications. An address outside the Netlify team gets one confirmation email that must be clicked first (or, if that isn't offered yet, the address must be a team member). The `email` field becomes the Reply-to, so replying answers the customer.
+- Email notification to the owner's address (set in Netlify only, never in the code): Forms > Notifications. An address outside the Netlify team gets one confirmation email that must be clicked first (or, if that isn't offered yet, the address must be a team member). The `email` field becomes the Reply-to, so replying answers the customer.
 - Fields: name*, company, email*, phone, what do you need (service list), project location, message*. No file uploads (plans are sent by email instead).
 
 ## Still to do (owner)
 
-- Netlify: form detection is **on** (owner, 2026-11-22; new UI: Manage > Forms > Settings > "Find forms on your pages"). After the next publish, **Forms > Notifications**: email to bids@twfabs.com, then click the confirmation email.
+- Netlify: form detection is **on** (owner, 2026-11-22; new UI: Manage > Forms > Settings > "Find forms on your pages"). After the next publish, **Forms > Notifications**: email to the owner's own address (not written here), then click the confirmation email.
 - Netlify's new dashboard has its own AI agent ("Ask for a change" box, Publish button, "Add a contact form" suggestions). Owner should not use them: changes go through GitHub pull requests only.
 - Send own photos (and which project names may be shown); answer the wording questions ("0 injuries", "century" vs "decades" of experience, press brake 3/16").
 - Make the project public when ready; then domain and DNS.
@@ -64,3 +64,4 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 - 2026-11-22: First version built: 7 pages from the Wix wording (cleaned up), contact form (Netlify Forms), photo placeholders, logo, safety headers. Checked at phone and desktop size (no errors, no sideways scroll, all links work). TylerTW/tw-services-website#1, merged by the owner.
 - 2026-11-22: Owner created the Netlify project (Import from GitHub; production branch main). First production deploy of the site (15 credits). New projects start private, so only the owner can view it for now. Form detection and the bids@ email notification not turned on yet.
 - 2026-11-22: Owner turned on form detection. This notes-only pull request is merged to trigger the publish that registers the contact form.
+- 2026-11-22: Removed bids@twfabs.com from every page (owner doesn't own it and wants no email address on the site); top bar and footer link to the contact form instead. Form messages go to the owner's address, set in Netlify only.
