@@ -37,11 +37,12 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 - Netlify Forms: `<form name="contact" data-netlify="true" netlify-honeypot="company-website" action="/thanks/">`. **Free and unlimited on credit-based plans.** Spam filtered by Akismet plus our hidden honeypot field.
 - Form detection: Manage > Forms > Settings > "Find forms on your pages" (on since 2026-11-22). Netlify's docs still call it "Enable form detection". It only scans at publish time.
 - Email notification to the owner's address (set in Netlify only, never in the code): Forms > Notifications. An address outside the Netlify team gets one confirmation email that must be clicked first (or, if that isn't offered yet, the address must be a team member). The `email` field becomes the Reply-to, so replying answers the customer.
+- The email subject line is set by the owner in Netlify (Forms > Notifications). Don't add a hidden `subject` field to the form: per Netlify's docs it would override his.
 - Fields: name*, company, email*, phone, what do you need (service list), project location, message*. No file uploads (plans are sent by email instead).
 
 ## Still to do (owner)
 
-- Netlify: form detection is **on** (owner, 2026-11-22; new UI: Manage > Forms > Settings > "Find forms on your pages"). After the next publish, **Forms > Notifications**: email to the owner's own address (not written here), then click the confirmation email.
+- Netlify: form detection is **on** (owner, 2026-11-22; new UI: Manage > Forms > Settings > "Find forms on your pages"). **Done 2026-11-22:** email notification to the owner's own address (not written here), any form, his own subject line.
 - Netlify's new dashboard has its own AI agent ("Ask for a change" box, Publish button, "Add a contact form" suggestions). Owner should not use them: changes go through GitHub pull requests only.
 - Send own photos (and which project names may be shown); answer the wording questions ("0 injuries", "century" vs "decades" of experience, press brake 3/16").
 - Make the project public when ready; then domain and DNS.
@@ -65,3 +66,4 @@ The owner of T.W Services, a small structural steel fabrication and erection com
 - 2026-11-22: Owner created the Netlify project (Import from GitHub; production branch main). First production deploy of the site (15 credits). New projects start private, so only the owner can view it for now. Form detection and the bids@ email notification not turned on yet.
 - 2026-11-22: Owner turned on form detection. This notes-only pull request is merged to trigger the publish that registers the contact form.
 - 2026-11-22: Removed bids@twfabs.com from every page (owner doesn't own it and wants no email address on the site); top bar and footer link to the contact form instead. Form messages go to the owner's address, set in Netlify only.
+- 2026-11-22: Owner merged TylerTW/tw-services-website#3 (email removed; live) and set up the form's email notification in Netlify. Queued on the branch, not yet in a pull request: removed the form's built-in subject line so the owner's Netlify subject is used.
